@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#6c63ff" />
+  <title>Image Color Picker</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%236c63ff'/></svg>" />
+</head>
+<body>
+  <header class="navbar">
+    <h1>🎨 Color Shade Explorer</h1>
+    <nav>
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="color-wheel.html" class="nav-link">Color Wheel</a>
+      <a href="image-picker.html" class="nav-link active">Image Picker</a>
+      <a href="about.html" class="nav-link">About</a>
+    </nav>
+  </header>
+
+  <main class="container image-page">
+    <section class="upload-section">
+      <h2>🖼️ Image Color Picker</h2>
+      <p>Upload any image, tap on it, and we'll tell you the exact color, its HEX, RGB, and name.</p>
+      <label class="upload-label" for="imageInput">
+        <div class="upload-box">
+          <span class="upload-icon">📷</span>
+          <p>Tap to upload an image</p>
+          <p class="upload-hint">JPG, PNG, WebP — up to 5MB</p>
+        </div>
+        <input type="file" id="imageInput" accept="image/*" hidden />
+      </label>
+    </section>
+
+    <section class="image-preview-section" id="imagePreviewSection" hidden>
+      <div class="image-wrapper">
+        <canvas id="imageCanvas"></canvas>
+        <p class="click-hint">Tap anywhere on the image to pick a color</p>
+      </div>
+    </section>
+
+    <section class="picked-color-section" id="pickedColorSection" hidden>
+      <h2>Picked Color</h2>
+      <div id="pickedColorBox" class="color-preview">
+        <div class="preview-swatch" id="pickedSwatch"></div>
+        <div class="color-info">
+          <div class="color-row">
+            <span class="color-label">HEX</span>
+            <code id="pickedHex">#FFFFFF</code>
+            <button class="copy-btn" data-target="pickedHex">Copy</button>
+          </div>
+          <div class="color-row">
+            <span class="color-label">RGB</span>
+            <code id="pickedRgb">rgb(255, 255, 255)</code>
+            <button class="copy-btn" data-target="pickedRgb">Copy</button>
+          </div>
+          <div class="color-row">
+            <span class="color-label">HSL</span>
+            <code id="pickedHsl">hsl(0, 0%, 100%)</code>
+            <button class="copy-btn" data-target="pickedHsl">Copy</button>
+          </div>
+          <div class="color-row">
+            <span class="color-label">Name</span>
+            <span id="pickedColorName">White</span>
+          </div>
+        </div>
+      </div>
+      <div class="shade-variants">
+        <h3>Shade Variants</h3>
+        <div id="pickedVariants" class="variants-grid"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Made with ❤️ — Color Shade Explorer</p>
+  </footer>
+
+  <script src="js/color-utils.js"></script>
+  <script src="js/image-picker.js"></script>
+</body>
+</html>
