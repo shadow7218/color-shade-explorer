@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#6c63ff" />
+  <title>Color Shade Explorer</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%236c63ff'/></svg>" />
+</head>
+<body>
+  <header class="navbar">
+    <h1>🎨 Color Shade Explorer</h1>
+    <nav>
+      <a href="index.html" class="nav-link active">Home</a>
+      <a href="color-wheel.html" class="nav-link">Color Wheel</a>
+      <a href="image-picker.html" class="nav-link">Image Picker</a>
+      <a href="about.html" class="nav-link">About</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h2>Explore Every Color Shade</h2>
+      <p>Pick a shade, copy its HEX or RGB value, or explore from the color wheel.</p>
+      <a href="color-wheel.html" class="btn-primary">Open Color Wheel</a>
+    </section>
+
+    <section class="shades-section">
+      <h2>✨ Popular Color Shades</h2>
+      <div id="shades-grid" class="shades-grid"></div>
+    </section>
+
+    <section class="shades-section">
+      <h2>🌈 Full Spectrum</h2>
+      <div id="spectrum" class="spectrum"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Made with ❤️ — Color Shade Explorer</p>
+  </footer>
+
+  <script src="js/color-utils.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
