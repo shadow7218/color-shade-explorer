@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#6c63ff" />
+  <title>Color Wheel — Shade Explorer</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%236c63ff'/></svg>" />
+</head>
+<body>
+  <header class="navbar">
+    <h1>🎨 Color Shade Explorer</h1>
+    <nav>
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="color-wheel.html" class="nav-link active">Color Wheel</a>
+      <a href="image-picker.html" class="nav-link">Image Picker</a>
+      <a href="about.html" class="nav-link">About</a>
+    </nav>
+  </header>
+
+  <main class="container wheel-page">
+    <section class="wheel-section">
+      <h2>Color Wheel</h2>
+      <p class="wheel-hint">Tap, drag, or slide on the wheel to pick a color.</p>
+      <div class="wheel-wrapper">
+        <canvas id="colorWheel" width="320" height="320"></canvas>
+        <div id="wheelCursor" class="wheel-cursor"></div>
+      </div>
+      <div class="wheel-controls">
+        <label>Brightness: <input type="range" id="brightnessSlider" min="20" max="100" value="100" /></label>
+        <label>Saturation: <input type="range" id="saturationSlider" min="20" max="100" value="100" /></label>
+      </div>
+    </section>
+
+    <section class="preview-section">
+      <h2>Selected Color</h2>
+      <div id="colorPreview" class="color-preview">
+        <div class="preview-swatch" id="previewSwatch"></div>
+        <div class="color-info">
+          <div class="color-row">
+            <span class="color-label">HEX</span>
+            <code id="hexValue">#6C63FF</code>
+            <button class="copy-btn" data-target="hexValue">Copy</button>
+          </div>
+          <div class="color-row">
+            <span class="color-label">RGB</span>
+            <code id="rgbValue">rgb(108, 99, 255)</code>
+            <button class="copy-btn" data-target="rgbValue">Copy</button>
+          </div>
+          <div class="color-row">
+            <span class="color-label">HSL</span>
+            <code id="hslValue">hsl(239, 100%, 70%)</code>
+            <button class="copy-btn" data-target="hslValue">Copy</button>
+          </div>
+          <div class="color-row">
+            <span class="color-label">Name</span>
+            <span id="colorName">Medium Slate Blue</span>
+          </div>
+        </div>
+      </div>
+      <div class="shade-variants">
+        <h3>Shade Variants</h3>
+        <div id="shadeVariants" class="variants-grid"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Made with ❤️ — Color Shade Explorer</p>
+  </footer>
+
+  <script src="js/color-utils.js"></script>
+  <script src="js/color-wheel.js"></script>
+</body>
+</html>
